@@ -34,3 +34,24 @@
 	 开源的FontAwesome图标字体（提供了675个常用图标）。
 	 
 	 FontAwesome的使用步骤：
+	 ①下载字体文件，保存到项目目录下，如fonts/,以供用户浏览网页时可以下载到字体文件
+	 ②在CSS文件中声明两个class：
+	 @font-face {         //定义一种新的字体
+		 font-family:'FontAwsome';
+		 src:url('../fonts/fontawsome.ttf');
+	 }
+	 .fa {               //使用刚刚定义的新字体
+		 font-family:'FontAwsome';
+	 }
+	 .fa-bank:before {
+		 content:'\f19';   //生成一个图标的编码
+	 }
+	 ③页面中引入上述CSS，开始使用图标字体：
+	 <span  class="fa fa-bank"></span>
+	 注意：因为使用前置内容生成创建的图标，所以每个span中只能
+	 放置一个图标，即需要放N个图标放N个span
+	 
+	 4、面试题：
+	 如何实现一个行内元素水平居中？
+	 如何实现一个块级元素水平居中？
+	 如何实现一个

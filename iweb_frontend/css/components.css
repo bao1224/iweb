@@ -5,6 +5,64 @@
 	border: 1px solid #eee;
 	line-height: 36px;
 }
+.download-app {
+	color: #f60;
+}
+.topbar-item {
+	padding: 0 0.5em;
+}
+.topbar-item:last-child {
+	padding-right: 0;
+}
+/* 2、LOGO+搜索条 */
+.searchbar > .container {
+	/* 为了元素的绝对定位提供定位标准 */
+	position: relative;
+}
+.logo {
+	margin: 1.5em 0;
+}
+.search {
+	/* 保证元素在父容器中竖直居中方法1：调整上间距 */
+	/* margin-top: 25px; */
+	/* 保证元素在父容器中竖直居中方法2：先向下移到父容器中线
+	 一下，再向上微调自身高度一半*/
+	 position: absolute;
+	 top: 50%;      /* 距离已定位的父元素顶部为父容器的50% */
+	 right: 200px;   /*w为右侧的“我的购物车”留空*/
+	 margin-top: -16px;    /* 往上微调自身高度的一半 */
+}
+.search-input {
+	width: 360px;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 0.6em;
+	font-size: 1.15em;
+	border: 1px solid #ccc;
+	/* margin-right: 50px;   /*让出右侧的搜索按钮的空间*/ */
+}
+.search-button {
+	width: 50px;
+	height: 32px;
+	background: #00be56;
+	color: #fff;
+	line-height: 32px;
+	border: none;
+	font-size: 1.7em;
+	position: absolute;
+}
+.my-cart {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	height: 32px;
+	margin-top: -16px;
+	border: 1px solid #ddd;
+	background: #F9F9F9;
+	line-height: 32px;
+	padding: 0 0.5em;
+}
+/* 3、导航条 */
 .navbar {
 	background: #00be56;
 	border-bottom: 1px solid #b3efc0;
