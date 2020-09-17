@@ -62,15 +62,81 @@
 	line-height: 32px;
 	padding: 0 0.5em;
 }
-/* 3、导航条 */
-.navbar {
-	background: #00be56;
-	border-bottom: 1px solid #b3efc0;
-	height: 52px;
+.my-cart > .fa {
+	color: #00be56;
+	padding: 0 0.5em;
 }
+/* 3、导航条 */
+.navbar{
+	background: #00be56;
+	border-bottom: 3px solid #b3efc0;
+	height: 52px;
+	font-size: 1.15em;
+}
+.menu:after{
+	
+}
+.menu > li{
+	float: left;
+	line-height: 49px;
+	padding: 0 1.5em;	
+}
+.menu > li:hover{
+	background: #00b149;
+}
+.menu > li.active {
+	background: #00a43d;
+}
+.menu > li > a{
+	color: #fff;
+}
+.user-center {
+	background: #55c760;
+	line-height: 49px;
+}
+.user-center a,
+.user-center span {
+	color: #fff;
+}
+.user-center a:hover {
+	color: #ffff9b;
+}
+/* 4、轮播广告 */
 .carouselbar {
 	border-bottom: 4px solid #ddd;
 }
+.carousel {
+	position: relative;    /*绝对定位的子元素提供参照物*/
+}
+.carousel  .items  a {
+	display: block;     /*改为块级元素，可以修改宽和高*/
+	width: 100%;
+	height: 380px;
+	background-position: center;    /*背景图的位置*/
+	background-repeat: no-repeat;   /*背景图仅显示一次*/
+}
+.carousel  .items  li:not(.active) {     /*不带.active的li隐藏*/
+	display: none;
+}
+.carousel  .indicators {
+	position: absolute;    /*圆形指示器要在图片上方*/
+	bottom: 20px;
+	left: 50%;
+	margin-left: -72px;
+}
+.carousel  .indicators  li {
+	width: 18px;
+	height: 18px;
+	background: #ccc;
+	border-radius: 50%;    /*边框圆角半径为尺寸的一半*/
+	float: left;
+	margin: 0 9px;
+	cursor: pointer;       /*光标悬停时变为“小手”*/
+}
+.carousel  .indicators  li.active {
+	background: #ff9300;
+}
+/* 5、主体部分 */
 .mainbar {
 	border-bottom: 1px solid #ddd;
 }
