@@ -1,22 +1,6 @@
-一、面试题：css中的元素定位有哪些？各自的使用场合？
-   ①静态定位：默认值，占用布局空间，不能使用top/right/bottom/left改变自己的位置
-     position:static
-   ②相对定位：与静态定位的元素几乎没有区别(也占用布局空间)，可以使用top/right/bottom/left
-   修改位置(参照物是自己的默认位置)-即使移走了，仍然不释放默认的布局空间；常用于为绝对定位的子元素
-   提供定位的参照物
-     position:relative
-   ③绝对定位：不占用布局空间，常用于悬停其它元素上方的效果；可以
-   指定top/right/bottom/left属性——必需一个已经定位了的父元素
-     position:absolute
-   ④固定定位：不占用布局空间，常用于固定定位于屏幕的某个特定位置，不随内容的滚动而滚动
-     position:fixed、
-	 
-二、web前端界的三大难点
-    ①浏览器/设备兼容性
-	②WEB性能优化
-	③WEB安全
-	
-三、常见的图片格式
-    ①.jpg:色彩最细腻，压缩比最高；不支持透明和动画
-	②.png:色彩一般细腻，压缩比一般；对透明的支持最好
-	③.gif:色彩表现一般，压缩比不好，支持透明和动画
+一、浮动布局坑
+   假设：.parent>.child1+.child2+.child3
+.parent宽度可以容纳.child1和child2.child3，如果三个字元素都浮动的话,.child3会被挤到下一行
+   情形1：.child1和.child2一样高，则.child3跑到.child1下方
+   情形2：.child1比.child2高，则.child3跑到.child2下方
+   情形3：.child1和.child2一样矮，则.child3跑到,child1下方

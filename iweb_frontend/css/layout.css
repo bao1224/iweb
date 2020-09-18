@@ -50,7 +50,12 @@ PAD：medium - md
 PHONE：small - sm
 */
 /*row表示布局中的一行*/
-.row:after {  /*在行的尾部生成一个新儿子，清除其他列由于浮动导致的行高坍塌问题*/
+.row {
+	margin-left: -1em;   /*抵消最左侧的列的padding-left*/
+	margin-right: -1em;	 /*抵消最右侧的列的padding-right*/
+}
+/*在行的尾部生成一个新儿子，清除其他列由于浮动导致的行高坍塌问题*/
+.row:after {  
 	content: '';
 	display: block;
 	clear: both;
@@ -63,6 +68,7 @@ PHONE：small - sm
 .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10,
 .col-lg-11, .col-lg-12 {
 	float: left;   /*浮动之后两个列才能处于同一行中*/
+	padding: 0 1em;   /*为所有的列添加1em的横向留白，组成2em的槽宽(gutter)*/
 }
 /* 在PC屏幕下每隔列的宽度*/
 @media  screen and (min-width:1024px) {
