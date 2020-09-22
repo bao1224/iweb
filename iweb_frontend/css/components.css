@@ -39,7 +39,7 @@
 	padding: 0 0.6em;
 	font-size: 1.15em;
 	border: 1px solid #ccc;
-	/* margin-right: 50px;   /*让出右侧的搜索按钮的空间*/ */
+	/* margin-right: 50px;   /*让出右侧的搜索按钮的空间 */ */
 }
 .search-button {
 	width: 50px;
@@ -50,6 +50,8 @@
 	border: none;
 	font-size: 1.7em;
 	position: absolute;
+	right: 0;
+	top: 0 ;
 }
 .my-cart {
 	position: absolute;
@@ -65,6 +67,52 @@
 .my-cart > .fa {
 	color: #00be56;
 	padding: 0 0.5em;
+}
+/*PHONE屏幕下的搜索条:LOGO + Search + Hamburger*/
+@media  screen  and  (max-width:767px) {
+	.searchbar {
+		background: #00be56;
+		border-bottom: 3px solid #b3efc0;
+		height: 52px;
+		font-size: 1.15em;
+	}
+	.logo-container {
+		height: 52px;      /*容器的高大于内容的高，才可能有竖直居中的问题*/
+		display: flex;     /*图片的容器显示模式变为：弹性盒子*/
+		align-items: center;    /*弹性盒子中的子元素居中对齐*/
+	}
+	.logo_reverse {
+		width: 100%;    /*正常情况下，控制弹性盒子中子元素的尺寸应该使用“弹性占比（flex）”
+		即可——此方式只会拉伸图片时宽，而不改变的高，所以此处没有使用*/
+	}
+	.search {
+		/* 保证元素在父容器中竖直居中方法1：调整上间距 */
+		/* margin-top: 25px; */
+		/* 保证元素在父容器中竖直居中方法2：先向下移到父容器中线
+		 一下，再向上微调自身高度一半*/
+		position: relative;    /*相对定位——为放大镜提供定位的参照物*/
+		margin-top: 10px;    /* 为输入框竖直居中增加上间距*/
+		top: 0;              /*清除全局样式中定位相关修改*/
+		right: 0;            /*清除全局样式中定位相关修改*/ 
+	}
+	.search-input {
+		width: 100%;
+		padding: 0  3em  0  0.6em;
+		margin-right: 0;   /*让出右侧的搜索按钮的空间 */
+	}
+	.search-button {
+		background: transparent;
+		color: #00be56;
+		top: -2px;
+	}
+	.hamburger {
+		color: #fff;
+		line-height: 52px;
+		font-size: 26px;
+	}
+	.navbar {         /*临时，非永久*/
+		display: none;
+	}
 }
 /* 3、导航条 */
 .navbar{
