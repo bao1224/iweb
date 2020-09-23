@@ -1,0 +1,41 @@
+a{
+	color: #9999b3;
+}
+a:hover,
+a:active{
+	color: #9999b3;
+}
+h3 {
+	font-weight: lighter;
+}
+
+.schoolbar-item {
+	padding-top: 10px;
+	font-size: 1.1em;
+}
+.day1 {
+	height: 167px;
+	border-bottom: 1px solid #eee;
+}
+.schoolbar .address {
+	margin-top: 40px;
+}
+.schoolbar .address .fa-map-marker {
+	color: #00be56;
+	font-size: 4em;
+	float: left;
+	margin-left: 3em;
+}
+.schoolbar .address .address-item{
+	margin-left: 13em;
+	font-size: 1.4em;
+	line-height: 1.6em;
+}
+.schoolbar .address .address-detail {
+	margin-left: 23em;
+	text-align: left;
+	color: #999;
+	font-size: .8em;
+	line-height: 2em;
+}
+

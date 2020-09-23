@@ -1,0 +1,103 @@
+/* 5、主体部分 */
+.mainbar {
+	border-bottom: 1px solid #ddd;
+}
+.mainbar  .header {
+	position: relative;   /*为绝对定位的子元素提供参照物*/
+	border-bottom: 3px solid #ddd;
+}
+.mainbar  .header h3 {
+	font-weight: normal;   /*标题字加粗取消*/
+	margin-bottom: .5em;   /*0.5简写为.5*/
+	padding: 0 0.8em;      /*此处的0.8可简写为.8*/
+}
+.mainbar  .header a {
+	position: absolute;
+	right: 0;
+	bottom: .3em;
+}
+.mainbar  .header span {
+	width: 7em;
+	height: 3px;
+	position: absolute;
+	left: 0;
+	bottom: -3px; /*此处不能使用0，仍然在父容器边框内*/
+	background: #00be56;
+}
+.mainbar  .course  {
+    padding: 1.2em  0;   /*每列中的.course需要自己提供上下间距*/
+}
+.mainbar  .course  .pic  img {
+	width: 100%;
+}
+.mainbar  .course  .title {
+	display: block;   /*让课程标题占一整行*/
+	text-align: left;
+	line-height: 1.8em;
+}
+.mainbar  .course  .teacher {
+	display: block;   /*让讲师姓名占一整行*/
+	font-size: .8em;
+	color: #999;
+	text-align: left;
+	line-height: 1.8em;
+}
+.mainbar  .course  .price {
+	display: block;   /*让价格占一整行*/
+	font-size: bold;
+	color: #ff5a00;
+	text-align: left;
+}
+.mainbar  .teacher-item {
+	padding: 2em 0;
+}
+.mainbar .teacher-item  .pic  img {
+	width: 100%;
+}
+.mainbar  .teacher-item  .tname {
+	font-size: 1.2em;
+	color: #555;
+	line-height: 2.2em;
+	display: block;      /*显示为块级元素，独占一行*/
+	text-align: center;
+}
+.mainbar  .teacher-item  .maincourse {
+	font-size: .8em;
+	color: #999;
+	display: block;
+	text-align: center;
+}
+/*在PAD屏幕下，讲师列表一行只能显示3.5个讲师信息，溢出水平移动*/
+@media  screen  and  (min-width:768px)  and  (max-width:1023px) {
+	.teacher-list {
+		white-space: nowrap;  /*一行结尾处的空白处不换行*/
+		overflow-x: auto;     /*水平方向内容溢出时显示滚动条*/
+		margin-left: 0;       /*取消.row左边的margin*/
+		margin-right: 0;      /*取消.row左边的margin*/
+	}
+	.col-lg-5-1 {
+		/*取消列浮动——浮动元素只要空间不够必然转到下一行*/
+		float: none;   
+		/*根据PAD屏幕下的.container宽度(750px),宽度内容宽*/
+		width: 214px;
+		/*将列设置为“行内块”——就可以在一行中出现多个列*/
+		display: inline-block;
+	}
+}
+/*在PHONE屏幕下，讲师列表一行大约显示3.5个讲师信息，溢出内容水平滚动*/
+@media  screen  and  (max-width:767px) {
+	.teacher-list {
+		white-space: nowrap;  /*一行结尾处的空白处不换行*/
+		overflow-x: auto;     /*水平方向内容溢出时显示滚动条*/
+		margin-left: 0;       /*取消.row左边的margin*/
+		margin-right: 0;      /*取消.row左边的margin*/
+	}
+	.col-lg-5-1 {
+		/*取消列浮动——浮动元素只要空间不够必然转到下一行*/
+		float: none;   
+		/*根据PHONE屏幕下的.container宽度(100%,基本都在320px-375px之间),宽度内容宽*/
+		width: 140px;
+		/*将列设置为“行内块”——就可以在一行中出现多个列*/
+		display: inline-block;
+	}
+}

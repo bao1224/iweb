@@ -84,6 +84,7 @@
 	.logo_reverse {
 		width: 100%;    /*正常情况下，控制弹性盒子中子元素的尺寸应该使用“弹性占比（flex）”
 		即可——此方式只会拉伸图片时宽，而不改变的高，所以此处没有使用*/
+		transform: translateX(12px);      /*变形函数：X轴平移*/
 	}
 	.search {
 		/* 保证元素在父容器中竖直居中方法1：调整上间距 */
@@ -91,7 +92,7 @@
 		/* 保证元素在父容器中竖直居中方法2：先向下移到父容器中线
 		 一下，再向上微调自身高度一半*/
 		position: relative;    /*相对定位——为放大镜提供定位的参照物*/
-		margin-top: 10px;    /* 为输入框竖直居中增加上间距*/
+		margin-top: 9px;    /* 为输入框竖直居中增加上间距*/
 		top: 0;              /*清除全局样式中定位相关修改*/
 		right: 0;            /*清除全局样式中定位相关修改*/ 
 	}
@@ -109,10 +110,9 @@
 		color: #fff;
 		line-height: 52px;
 		font-size: 26px;
+		transform: translateX(2px);
 	}
-	.navbar {         /*临时，非永久*/
-		display: none;
-	}
+	
 }
 /* 3、导航条 */
 .navbar{
@@ -148,6 +148,32 @@
 }
 .user-center a:hover {
 	color: #ffff9b;
+}
+@media  screen  and  (max-width: 767px){
+	/* PHONE屏幕下，导航条变为“充满整个屏幕的半透明区” */
+	.navbar {         
+		transform: translateX(-100%);   /*默认情况下，响应式导航条隐藏在屏幕左侧*/
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.9);
+		height: auto ;      /*必须覆盖所有屏幕下高度为52px的设定*/
+		z-index: 9999;      /*必须足够高，以盖住绝对定位的元素*/
+	}
+	.menu > li {
+		float: none;       /*PHONE下每个菜单项独占一行*/
+		text-align: center;
+		border-bottom: 1px solid #666;
+	}
+	.menu-close {    /*仅在PHONE屏幕下显示的关闭按钮*/
+		position: absolute;
+		top: 7px;
+		right: 10px;
+		color: #fff;
+		font-size: 2em;
+	}
 }
 /* 4、轮播广告 */
 .carouselbar {
@@ -212,109 +238,37 @@
 .carousel  .controls .next:hover {
 	background: rgba(0,0,0,0.6);
 }
-/* 5、主体部分 */
-.mainbar {
-	border-bottom: 1px solid #ddd;
-}
-.mainbar  .header {
-	position: relative;   /*为绝对定位的子元素提供参照物*/
-	border-bottom: 3px solid #ddd;
-}
-.mainbar  .header h3 {
-	font-weight: normal;   /*标题字加粗取消*/
-	margin-bottom: .5em;   /*0.5简写为.5*/
-	padding: 0 0.8em;      /*此处的0.8可简写为.8*/
-}
-.mainbar  .header a {
-	position: absolute;
-	right: 0;
-	bottom: .3em;
-}
-.mainbar  .header span {
-	width: 7em;
-	height: 3px;
-	position: absolute;
-	left: 0;
-	bottom: -3px; /*此处不能使用0，仍然在父容器边框内*/
-	background: #00be56;
-}
-.mainbar  .course  {
-    padding: 1.2em  0;   /*每列中的.course需要自己提供上下间距*/
-}
-.mainbar  .course  .pic  img {
-	width: 100%;
-}
-.mainbar  .course  .title {
-	display: block;   /*让课程标题占一整行*/
-	text-align: left;
-	line-height: 1.8em;
-}
-.mainbar  .course  .teacher {
-	display: block;   /*让讲师姓名占一整行*/
-	font-size: .8em;
-	color: #999;
-	text-align: left;
-	line-height: 1.8em;
-}
-.mainbar  .course  .price {
-	display: block;   /*让价格占一整行*/
-	font-size: bold;
-	color: #ff5a00;
-	text-align: left;
-}
-.mainbar  .teacher-item {
-	padding: 2em 0;
-}
-.mainbar .teacher-item  .pic  img {
-	width: 100%;
-}
-.mainbar  .teacher-item  .tname {
-	font-size: 1.2em;
-	color: #555;
-	line-height: 2.2em;
-	display: block;      /*显示为块级元素，独占一行*/
-	text-align: center;
-}
-.mainbar  .teacher-item  .maincourse {
-	font-size: .8em;
-	color: #999;
-	display: block;
-	text-align: center;
-}
-/*在PAD屏幕下，讲师列表一行只能显示3.5个讲师信息，溢出水平移动*/
-@media  screen  and  (min-width:768px)  and  (max-width:1023px) {
-	.teacher-list {
-		white-space: nowrap;  /*一行结尾处的空白处不换行*/
-		overflow-x: auto;     /*水平方向内容溢出时显示滚动条*/
-		margin-left: 0;       /*取消.row左边的margin*/
-		margin-right: 0;      /*取消.row左边的margin*/
-	}
-	.col-lg-5-1 {
-		/*取消列浮动——浮动元素只要空间不够必然转到下一行*/
-		float: none;   
-		/*根据PAD屏幕下的.container宽度(750px),宽度内容宽*/
-		width: 214px;
-		/*将列设置为“行内块”——就可以在一行中出现多个列*/
-		display: inline-block;
-	}
-}
-/*在PHONE屏幕下，讲师列表一行大约显示3.5个讲师信息，溢出内容水平滚动*/
 @media  screen  and  (max-width:767px) {
-	.teacher-list {
-		white-space: nowrap;  /*一行结尾处的空白处不换行*/
-		overflow-x: auto;     /*水平方向内容溢出时显示滚动条*/
-		margin-left: 0;       /*取消.row左边的margin*/
-		margin-right: 0;      /*取消.row左边的margin*/
+	.carousel  .items  a {
+		height: 190px;
+		/*背景图原高380px,此处的容器较小，让背景图覆盖*/
+		background-size: cover;
 	}
-	.col-lg-5-1 {
-		/*取消列浮动——浮动元素只要空间不够必然转到下一行*/
-		float: none;   
-		/*根据PHONE屏幕下的.container宽度(100%,基本都在320px-375px之间),宽度内容宽*/
-		width: 140px;
-		/*将列设置为“行内块”——就可以在一行中出现多个列*/
-		display: inline-block;
+	.carousel  .controls {
+		position: static;   /*取消.prev和.next父元素的绝对定位，
+		让它俩的定位参照物设定为.carousel即可*/
 	}
+	.carousel  .controls  .prev {
+		margin-left: 0;	/*清除全局margin-left设置*/
+		left: 0;
+		top: 50%;
+	}
+	.carousel  .controls  .next {
+		margin-left: 0; /*清除全局margin-left设置*/
+		right: 0;
+		top: 50%;
+	} 
 }
+@media  screen  and  (min-width:768px)  and  (max-width:1023px) {
+	.carousel  .controls  .prev {
+		margin-left: -375px;/*向左移动容器的一半*/		
+	}
+	.carousel  .controls  .next {
+		margin-left: 321px;/*向右移动容器半宽——自己的宽*/
+	} 
+}
+
+
 /* 6、底部条 */
 .bottombar {
 	background: #eee;
@@ -350,4 +304,31 @@
 	font-size: .8em;
 	line-height: 2em;
 	margin: 1em 0  1.5em;
+}
+/* 7、底部页签条 */
+@media  screen  and  (max-width:767px) {
+	/*让body在底部留白，高度为.tabbar的高度*/
+	body {
+		margin-bottom: 64px;
+	}
+	.tabbar {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 64px;
+		background: #f8f6fa;
+		border-top: 1px solid #d2cfcc;
+	}
+	.tab {
+		color: #ddd;
+		text-align: center;
+		padding: 7px 0 0;
+	}
+	.tab.active {
+		color: #00be56;
+	}
+	.tab  .fa {
+		font-size: 3em;
+	}
 }
