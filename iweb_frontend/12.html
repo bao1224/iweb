@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<style>
-			.box {
-				border: 1px solid #000;
-				width: 30%;
-				height: 150px;
-				/* line-height: 250px;     方式1*/ 
-				
-				/*display: table-cell;
-				vertical-align: middle;    方式3*/
-				display: flex;
-				align-items: center;
-			}
-			img {
-				/* flex: 1; */
-				width: 100%;
-				/* margin-top: 20px;      方式2 */
-			}
-		</style>
-	</head>
-	<body>
-		<div class="box">
-			<img src="img/logo.png" >
-		</div>
-	</body>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		.box {
+			width: 1px;
+			height: 100px;
+			background: red;
+			transform: translateX(0);
+			/* transition: width 1s; */
+			transition: all 2s;              /*过渡动画*/
+		}
+		.box.long {
+			transform: translateX(200px);     /*平移200*/
+			width: 400px;
+			height: 200px;
+			background: cyan;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<button data-bian="chang">变宽</button>
+	<button data-bian="duan">变窄</button>
+	<script>
+		document.querySelector('[data-bian="chang"]').onclick = function(){
+			document.querySelector('.box').classList.add('long')
+		}
+		document.querySelector('[data-bian="duan"]').onclick = function(){
+			document.querySelector('.box').classList.remove('long')
+		}
+	</script>
+</body>
 </html>

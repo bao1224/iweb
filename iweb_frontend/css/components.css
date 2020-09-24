@@ -161,6 +161,11 @@
 		background: rgba(0, 0, 0, 0.9);
 		height: auto ;      /*必须覆盖所有屏幕下高度为52px的设定*/
 		z-index: 9999;      /*必须足够高，以盖住绝对定位的元素*/
+		transition: all .3s;/*在0.3秒钟内将属性的改变添加过渡动画*/
+	}
+	.navbar.active {
+		/* 带.active的导航条取消平移变形 */
+		transform: translateX(0);
 	}
 	.menu > li {
 		float: none;       /*PHONE下每个菜单项独占一行*/
