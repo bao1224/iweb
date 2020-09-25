@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let list = [40,90,50,30,80]
+			//数组遍历传统方法：for循环
+			/*for(let i=0; i<list.length; i++){
+				let e =list[i]
+				console.log(i,  e)
+				//i你为循环变量，就是每个元素的下标
+				//e称为数组中的元素
+			}*/
+			
+			//ES6中数组变量的新方法：
+			list.forEach(function(e, i){
+				console.log('访问到每个元素:',e, i)
+			})
+		</script>
+	</body>
+</html>

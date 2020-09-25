@@ -27,15 +27,21 @@ h3 {
 	margin-left: 3em;
 }
 .schoolbar .address .address-item{
-	margin-left: 13em;
+	margin-left: 3em;
 	font-size: 1.4em;
 	line-height: 1.6em;
 }
 .schoolbar .address .address-detail {
-	margin-left: 23em;
+	margin-left: 5em;
 	text-align: left;
 	color: #999;
 	font-size: .8em;
 	line-height: 2em;
+}
+@media screen and (max-width:767px) {
+	.day1 {
+		height: 250px;
+		border-bottom: 1px solid #eee;
+	}
 }
 
