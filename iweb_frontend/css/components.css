@@ -337,3 +337,23 @@
 		font-size: 3em;
 	}
 }
+
+/* 8.面包屑 */
+.breadcrumb ul:after {  /*在ul的尾部生成一个新的子元素，清除所有的li浮动导致的ul高度丢失问题*/
+	content: '';
+	display: block;
+	clear: both;
+}
+.breadcrumb  ul  li {
+	float: left;
+	line-height: 3em;
+}
+/* 面包屑中的每个li（除了最后一个）尾部生成一个> */
+.breadcrumb  ul  li:not(:last-child):after {
+	content: '>';
+	margin: 0 0.5em;
+	color: #999;
+}
+.breadcrumb  ul  li  a {
+	color: #999;
+}
