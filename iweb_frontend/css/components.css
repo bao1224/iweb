@@ -357,3 +357,40 @@
 .breadcrumb  ul  li  a {
 	color: #999;
 }
+
+/* 9.分页条 */
+.pager {
+	padding: 2.8em 0;
+}
+.pager ul {
+	text-align: center;
+}
+.pager ul li {
+	/* 让li变为行内块，既可以多个li共处一行，也可以指定尺寸/间距 */
+	display: inline-block;
+	/* 此方式不足：①老IE不支持  ②HTML中只要有空白字符，呈现时会有一个空格 */
+	border: 1px solid #ddd;
+	padding: 0.3em  0.7em;
+	cursor: pointer;  /*鼠标悬停在li上方时，光标变为小手*/
+}
+.pager ul li.active {
+	background: #99d989;
+	border: 1px solid #99D989;
+	cursor: default;
+}
+.pager ul li.disabled {
+	background: #f4f4f4f4;
+	cursor: default;
+}
+.pager  ul  li  a {
+	color: #999;
+}
+.pager ul li.active a{
+	color: #fff;
+	/* 将超链接的默认光标效果（小手）转换为平时效果 */
+	cursor: default;
+}
+.pager  ul  li.disabled a {
+	color: #ddd;
+	cursor: default;
+}
