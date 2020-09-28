@@ -394,3 +394,7 @@
 	color: #ddd;
 	cursor: default;
 }
+/* 当鼠标悬停于非.active项/非.disables项上方时，边框变色 */
+.pager  ul  li:not(.active):not(.disabled):hover{
+	border-color: #99d989;
+}

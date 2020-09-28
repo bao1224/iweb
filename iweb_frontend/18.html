@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<script>
-			let i=2
-			//let selector = 'li:nth.child(i+1)'
-			let selector = 'li:nth.child(' + (i+1)  +')'
-			console.log(selector)
-		</script>
-	</body>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+	<div data-author="wenhua" data-animate-max-width="80%" data-animate-min-width="20%" 
+	data-userage="20" data-buyCount="3">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eveniet 
+		nihil at natus pariatur unde totam consectetur tenetur quos id labore quasi. 
+		Ipsum eum dolore impedit repudiandae nihil doloremque quos.
+	</div>
+	<script>
+		let box = document.querySelector('[data-author="wenhua"]')
+		//输出一个HTML元素
+		//console.log(box)
+		//检查一个HTML元素对应的JS对象
+		console.dir(box)
+	</script>
+</body>
 </html>
