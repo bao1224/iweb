@@ -73,6 +73,42 @@ PHONE：small - sm
 }
 /* 在PC屏幕下每隔列的宽度*/
 @media  screen and (min-width:1024px) {
+	.col-lg-offset-1 {
+		margin-left: 8.3333333333%;
+	}
+	.col-lg-offset-2 {
+		margin-left: 16.6666666666%;
+	}
+	.col-lg-offset-3 {
+		margin-left: 25%;
+	}
+	.col-lg-offset-4 {
+		margin-left: 33.33333333333%;
+	}
+	.col-lg-offset-5 {
+		margin-left: 41.66666666666%;
+	}
+	.col-lg-offset-6 {
+		margin-left: 50%;
+	}
+	.col-lg-offset-7 {
+		margin-left: 58.3333333333%;
+	}
+	.col-lg-offset-8 {
+		margin-left: 66.66666666666%;
+	}
+	.col-lg-offset-9 {
+		margin-left: 75%;
+	}
+	.col-lg-offset-10 {
+		margin-left: 83.3333333333%;
+	}
+	.col-lg-offset-11 {
+		margin-left: 91.66666666666%;
+	}
+	.col-lg-offset-12 {
+		margin-left: 100%;
+	}
 	.col-lg-5-1 {
 		width: 20%;
 	}
@@ -127,6 +163,42 @@ PHONE：small - sm
 }
 /* 在PAD屏幕下每隔列的宽度*/
 @media  screen and (min-width:768px) and (max-width:1023px) {
+	.col-md-offset-1 {
+		margin-left: 8.3333333333%;
+	}
+	.col-md-offset-2 {
+		margin-left: 16.6666666666%;
+	}
+	.col-md-offset-3 {
+		margin-left: 25%;
+	}
+	.col-md-offset-4 {
+		margin-left: 33.33333333333%;
+	}
+	.col-md-offset-5 {
+		margin-left: 41.66666666666%;
+	}
+	.col-md-offset-6 {
+		margin-left: 50%;
+	}
+	.col-md-offset-7 {
+		margin-left: 58.3333333333%;
+	}
+	.col-md-offset-8 {
+		margin-left: 66.66666666666%;
+	}
+	.col-md-offset-9 {
+		margin-left: 75%;
+	}
+	.col-md-offset-10 {
+		margin-left: 83.3333333333%;
+	}
+	.col-md-offset-11 {
+		margin-left: 91.66666666666%;
+	}
+	.col-md-offset-12 {
+		margin-left: 100%;
+	}
 	.col-md-1 {
 		width: 8.3333333333%;  /* 1/12 */
 	}
@@ -166,6 +238,42 @@ PHONE：small - sm
 }
 /* 在PHOME屏幕下每隔列的宽度*/
 @media  screen and (max-width:767px) {
+	.col-sm-offset-1 {
+		margin-left: 8.3333333333%;
+	}
+	.col-sm-offset-2 {
+		margin-left: 16.6666666666%;
+	}
+	.col-sm-offset-3 {
+		margin-left: 25%;
+	}
+	.col-sm-offset-4 {
+		margin-left: 33.33333333333%;
+	}
+	.col-sm-offset-5 {
+		margin-left: 41.66666666666%;
+	}
+	.col-sm-offset-6 {
+		margin-left: 50%;
+	}
+	.col-sm-offset-7 {
+		margin-left: 58.3333333333%;
+	}
+	.col-sm-offset-8 {
+		margin-left: 66.66666666666%;
+	}
+	.col-sm-offset-9 {
+		margin-left: 75%;
+	}
+	.col-sm-offset-10 {
+		margin-left: 83.3333333333%;
+	}
+	.col-sm-offset-11 {
+		margin-left: 91.66666666666%;
+	}
+	.col-sm-offset-12 {
+		margin-left: 100%;
+	}
 	.col-sm-5-1 {
 		width: 20%;
 	}

@@ -72,3 +72,25 @@
 	/* 每个段落最开头“缩进(index)”两个文字的空间 */
 	text-indent: 2em;
 }
+/* PAD屏幕下，课程介绍的头部需要调整文字的高度 */
+@media  screen  and  (min-width:768px)  and  (max-width:1023px) {
+	.course-header  .items {
+		margin: 0.8em  0;
+		padding: 0.8em  0.8em;
+		line-height: 1.9em;
+	}
+	.course-header .price {
+		line-height: 2.7em;
+	}
+}
+@media  screen  and (max-width:767px) {
+	.course-header .pic {
+		padding: 0  1em;
+	}
+	.course-header .course-header-text {
+		padding: 1em 2em;
+	}
+	.course-details  .course-details-body {
+		padding: 0.3em 1em;
+	}
+}
