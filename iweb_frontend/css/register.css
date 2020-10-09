@@ -1,69 +1,82 @@
-/*1. 主体部分 */
-.mainbar {
+/* 主体部分 */
+.mainbar{
 	background: #fcfcfc;
 }
 .mainbar:before,
-.mainbar:after {           /*解决.mainbar里.container的margin越界问题*/
-	content: '';
+.mainbar:after{
+	content:'';
 	display: table;
 }
-.mainbar  .container {
-	margin: 3em  auto  3.5em;
+.mainbar .container{
+	background-color: #fff;
+	margin: 3em auto 3.5em;
 	border: 1px solid #e6e6e6;
-	/* 边框外侧的外阴影：水平偏移量  竖直偏移量  阴影的半径  阴影颜色 */
-	box-shadow: 0  0  2px #e6e6e6;
-	/* 边框圆角半径 */
+	/* 边框外侧有外阴影 :水平方向上的偏移量，竖直偏移量，阴影半径，阴影颜色*/
+	box-shadow: 0 0 2px #e6e6e6;
+	/* 边框的圆角半径 */
 	border-radius: 2px;
-	padding: 1em  7em  2em;
+	padding: 1em 7em 2em;
 }
-.form  .header {
-	font-size: 1.4em ;
-	text-align: center;
+.form .header{
+	font-size: 1.4em;
 	color: #ff9300;
 	line-height: 4em;
 	border-bottom: 1px solid #ddd;
+	text-align: center;
 }
-.form .row {
-	line-height: 2.9em;
-	padding: .6em  0;
+.form .header .jump-to-login{
+	font-size: 0.6em;
+	color: #FF9300;
 }
-.form  label {
-	/* label默认是行内元素，无法指定左右对齐，必须修改为块级元素 */
-	display: block;
+.form .row{
+	line-height: 3em;
+	padding: .6em 0;
+}
+.form label{
+	display:block;
 	text-align: right;
 }
-.form  input {
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="tel"]{
 	width: 100%;
 	padding: .8em 1em;
 	border: 1px solid #ccc;
-	border-radius: 3px;    /*边框圆角半径*/
-	vertical-align: middle;   /**/
+	border-radius: 3px;
+	vertical-align: middle;
 }
-.form  span.error{
+.form span.error{
 	color: #f00;
 }
-.form  span.succ {
-	color: #00c160;
+.form span.succ{
+	color: #00ce60;
 }
-.form .captcha {
-	height: 34px;   /*宽会随着高等比例缩放*/
-	vertical-align: middle;  /*图片与后面的文字竖直居中对齐*/
+.form .captcha{
+	height: 34px;
+	vertical-align: middle;
 }
-.form  .refresh {
+.form .refresh{
 	font-size: 2em;
+	color: #00BE56;
 	line-height: 34px;
-	color: #00be56;
-	cursor: pointer;  /*鼠标悬停时呈现“手指”的效果*/
+	cursor: pointer;
 }
-/* PHONE屏幕下，调整间距及文本对齐 */
-@media screen and (max-width:767px) {
-	.mainbar  .container {
-		padding: 0  1em  1em;
-	}
-	.form  .row {
+.form .btn-submit{
+	width: 100%;
+	border: none;
+	background-color: #5ab33f;
+	height: 35px;
+	color: #fff;
+}
+.form .btn-submit:hover{
+	background-color: #4ba634;
+}
+/* PHONE屏幕下，调整间距及label文字居左对齐 */
+@media screen and (max-width:767px){
+	.form .row{
 		line-height: 2em;
 	}
-	.form  label {
+	.form label{
 		text-align: left;
 	}
 }

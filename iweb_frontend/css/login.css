@@ -1,0 +1,181 @@
+.form {
+	margin-top: 40px;
+	box-shadow: 0px 0px 5px #ccc;
+	background: #fff;
+	padding: 30px 40px 70px;
+	box-sizing: border-box;
+}
+
+.header {
+	border-left: 3px solid #77c558;
+	padding-left: 10px;
+	line-height: 20px;
+	font-weight: lighter;
+	font-size: 18px;
+}
+
+.header a {
+	float: right;
+	font-size: 12px;
+	color: #f90;
+	text-decoration: underline;
+}
+
+.login {
+	width: 350px;
+	margin-top: 35px;
+}
+
+.login .usrnam {
+	margin-bottom: 8px;
+}
+
+.login .usrpsd {
+	margin-bottom: 8px;
+}
+
+.login .title1 {
+	font-size: 16px;
+	color: #555;
+	line-height: 40px;
+}
+
+.login .title1 .tips {
+	font-size: 12px;
+	color: #f00;
+	float: right;
+	display: inline;
+}
+
+.login .title2 {
+	position: relative;
+}
+
+.login .title2 input {
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	padding-left: 45px;
+	padding-right: 45px;
+	height: 38px;
+	border: 1px solid #c6efc2;
+}
+
+.login .title2 .icon-front {
+	font-size: 2em;
+	position: absolute;
+	top: 6px;
+	left: 15px;
+	color: #ddd;
+}
+
+.login .title2 .icon-error {
+	font-size: 2em;
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	color: #ff3300;
+}
+
+.login .usrlogin {
+	line-height: 38px;
+	margin-top: 45px;
+}
+
+.login .usrlogin:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.autologin {
+	float: left;
+}
+
+.login .usrlogin input {
+	vertical-align: middle;
+}
+
+.login .usrlogin span {
+	font-size: 14px;
+	color: #666;
+	vertical-align: middle;
+}
+
+.login .usrlogin button {
+	float: right;
+	outline: none;
+	width: 160px;
+	height: 38px;
+	border: none;
+	background: #4ba634;
+	color: #fff;
+	font-size: 16px
+}
+
+.shuline {
+	border-right: 3px solid #333333;
+	height: 280px;
+}
+
+.lookmain {
+	width: 100%;
+	text-align: center;
+}
+
+.twoweima {
+	width: 150px;
+	height: 150px;
+	margin: 80px auto 0;
+}
+
+.twoweima img {
+	width: 100%;
+	height: 100%;
+}
+
+@media screen and (max-width:767px) {
+	.login {
+		margin: 30px auto 0;
+	}
+	.header{
+		position: relative;
+		padding-right: 30px;
+	}
+	.ttcode{
+		position: absolute;
+		top: -30px;
+		right: -30px;
+		width: 80px;
+		height: 80px;
+		cursor: pointer;
+	}
+	.lookmain{
+		transform: translateX(-100%); 
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.9);
+		height: auto;	/*必需覆盖所有屏幕下高度为52px的设定*/
+		z-index: 9999;  /*必需足够高，以盖住页面中绝对定位的元素*/
+		transition: all  .3s; 
+	}
+	.twoweima {
+		width: 300px;
+		height: 300px;
+		margin: 120px auto 0;
+	}
+	.lookmain.active{
+		transform: translateX(0);
+	}
+	.menu-c{
+		position: absolute;
+		top: 7px;
+		right: 10px;
+		color: #fff;
+		font-size: 3em;
+		cursor: pointer;
+	}
+}

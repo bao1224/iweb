@@ -1,0 +1,41 @@
+.title2{
+	border-left: 3px solid #77c558;
+	padding-left: 12px;
+	line-height: 20px;
+	font-weight: lighter;
+	font-size: 18px;
+}
+.teacher_list{
+	margin-top: 13px;
+}
+.teacher_list ul li{
+	border-top: 1px dotted #ccc;
+	padding: 30px 0;
+}
+.teacher_list ul li img{
+	float: left;
+	width: 150px;
+	height: 200px;
+}
+.teacher_list ul li>div{
+	float: left;
+	margin-left: 50px;
+	width: 720px;
+}
+.teacher_list ul li>div>h3{
+	font-size: 16px;
+	font-weight: lighter;
+	color: #f60;
+	line-height: 30px;
+}
+.teacher_list ul li>div>dl {
+	font-size: 13px;
+	margin-top: 12px;
+}
+.clearfloat:after {
+    content: "";
+    display: table;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}

@@ -1,45 +1,44 @@
-/* 多个页面所通用组件必需的样式 */
-/* 顶部的灰色条 */
+/* 多个页面所通用的组件必需的样式 */
+/* 1.顶部的灰色条 */
 .topbar {
 	background: #f9f9f9;
-	border: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 	line-height: 36px;
 }
 .download-app {
 	color: #f60;
 }
 .topbar-item {
-	padding: 0 0.5em;
+	padding:  0   0.5em;
 }
 .topbar-item:last-child {
 	padding-right: 0;
 }
-/* 2、LOGO+搜索条 */
+/* 2.LOGO+搜索条 */
 .searchbar > .container {
-	/* 为了元素的绝对定位提供定位标准 */
-	position: relative;
+	/*为子元素的绝对定位提供定位标准*/
+	position: relative;  
 }
 .logo {
-	margin: 1.5em 0;
+	margin:  1.5em  0;
 }
 .search {
 	/* 保证元素在父容器中竖直居中方法1：调整上间距 */
 	/* margin-top: 25px; */
-	/* 保证元素在父容器中竖直居中方法2：先向下移到父容器中线
-	 一下，再向上微调自身高度一半*/
-	 position: absolute;
-	 top: 50%;      /* 距离已定位的父元素顶部为父容器的50% */
-	 right: 200px;   /*w为右侧的“我的购物车”留空*/
-	 margin-top: -16px;    /* 往上微调自身高度的一半 */
+	/* 保证元素在父容器中竖直居中方法2：先向下移到父容器中线一下，再向上微调自身高度一半 */
+	position: absolute;
+	top: 50%;   /*距离已定位的父元素顶部为父容器的50%*/
+	right: 200px; /*为右侧的“我的购物车”留空*/
+	margin-top: -16px;  /*往上微调自身高度的一半*/
 }
 .search-input {
 	width: 360px;
 	height: 32px;
 	line-height: 32px;
-	padding: 0 0.6em;
+	padding: 0  0.6em;
 	font-size: 1.15em;
 	border: 1px solid #ccc;
-	/* margin-right: 50px;   /*让出右侧的搜索按钮的空间 */ */
+	margin-right: 50px;		/*让出右侧的搜索按钮的空间*/
 }
 .search-button {
 	width: 50px;
@@ -51,7 +50,7 @@
 	font-size: 1.7em;
 	position: absolute;
 	right: 0;
-	top: 0 ;
+	top: 0;
 }
 .my-cart {
 	position: absolute;
@@ -60,16 +59,16 @@
 	height: 32px;
 	margin-top: -16px;
 	border: 1px solid #ddd;
-	background: #F9F9F9;
+	background: #f9f9f9;
 	line-height: 32px;
-	padding: 0 0.5em;
+	padding: 0  0.5em;
 }
 .my-cart > .fa {
 	color: #00be56;
-	padding: 0 0.5em;
+	padding: 0  0.5em;
 }
-/*PHONE屏幕下的搜索条:LOGO + Search + Hamburger*/
-@media  screen  and  (max-width:767px) {
+/* PHONE屏幕下的搜索条：LOGO + Search + Hamburger */
+@media screen and (max-width: 767px) {
 	.searchbar {
 		background: #00be56;
 		border-bottom: 3px solid #b3efc0;
@@ -77,29 +76,25 @@
 		font-size: 1.15em;
 	}
 	.logo-container {
-		height: 52px;      /*容器的高大于内容的高，才可能有竖直居中的问题*/
-		display: flex;     /*图片的容器显示模式变为：弹性盒子*/
-		align-items: center;    /*弹性盒子中的子元素居中对齐*/
+		height: 52px;	/*容器的高大于内容的高，才可能有竖直居中问题*/
+		display: flex;	/*图片的容器显示模式变为：弹性盒子*/
+		align-items: center;  /*弹性盒子中的子元素居中对齐*/
 	}
 	.logo_reverse {
-		width: 100%;    /*正常情况下，控制弹性盒子中子元素的尺寸应该使用“弹性占比（flex）”
-		即可——此方式只会拉伸图片时宽，而不改变的高，所以此处没有使用*/
-		transform: translateX(12px);      /*变形函数：X轴平移*/
+		/* flex: 1; */
+		width: 100%;	/*正常情况下，控制弹性盒子中子元素的尺寸应该使用“弹性占比（flex）”即可——此方式只会拉伸图片的宽，而不改变的高，所以此处没有使用*/
+		transform: translateX(12px);  /*变形函数：X轴平移*/
 	}
 	.search {
-		/* 保证元素在父容器中竖直居中方法1：调整上间距 */
-		/* margin-top: 25px; */
-		/* 保证元素在父容器中竖直居中方法2：先向下移到父容器中线
-		 一下，再向上微调自身高度一半*/
-		position: relative;    /*相对定位——为放大镜提供定位的参照物*/
-		margin-top: 9px;    /* 为输入框竖直居中增加上间距*/
-		top: 0;              /*清除全局样式中定位相关修改*/
-		right: 0;            /*清除全局样式中定位相关修改*/ 
+		position: relative;  /*相对定位—为放大镜提供定位参照物*/
+		margin-top: 9px;  /*为输入框竖直居中增加上间距*/
+		top: 0;		/*清除全局样式中定位相关修改*/
+		right: 0;	/*清除全局样式中定位相关修改*/
 	}
 	.search-input {
 		width: 100%;
-		padding: 0  3em  0  0.6em;
-		margin-right: 0;   /*让出右侧的搜索按钮的空间 */
+		padding: 0   3em   0   0.6em;
+		margin-right: 0;	/*清除之前对所有屏幕设定的间距*/
 	}
 	.search-button {
 		background: transparent;
@@ -112,67 +107,68 @@
 		font-size: 26px;
 		transform: translateX(2px);
 	}
-	
 }
-/* 3、导航条 */
-.navbar{
+
+/* 3.导航条 */
+.navbar {
 	background: #00be56;
 	border-bottom: 3px solid #b3efc0;
 	height: 52px;
 	font-size: 1.15em;
 }
-.menu:after{
-	
+.menu {
 }
-.menu > li{
+.menu > li {
 	float: left;
 	line-height: 49px;
-	padding: 0 1.5em;	
+	padding: 0  1.5em;
 }
-.menu > li:hover{
+.menu > li:hover {
 	background: #00b149;
 }
 .menu > li.active {
 	background: #00a43d;
 }
-.menu > li > a{
+.menu > li > a {
 	color: #fff;
 }
 .user-center {
 	background: #55c760;
 	line-height: 49px;
 }
-.user-center a,
-.user-center span {
+.user-center  a,
+.user-center  span {
 	color: #fff;
 }
-.user-center a:hover {
+.user-center  a:hover {
 	color: #ffff9b;
 }
 @media  screen  and  (max-width: 767px){
 	/* PHONE屏幕下，导航条变为“充满整个屏幕的半透明区” */
-	.navbar {         
-		transform: translateX(-100%);   /*默认情况下，响应式导航条隐藏在屏幕左侧*/
+	.navbar {
+		/*默认情况下，响应式导航条隐藏在屏幕左侧*/
+		transform: translateX(-100%); 
 		position: fixed;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		background: rgba(0, 0, 0, 0.9);
-		height: auto ;      /*必须覆盖所有屏幕下高度为52px的设定*/
-		z-index: 9999;      /*必须足够高，以盖住绝对定位的元素*/
-		transition: all .3s;/*在0.3秒钟内将属性的改变添加过渡动画*/
+		height: auto;	/*必需覆盖所有屏幕下高度为52px的设定*/
+		z-index: 9999;  /*必需足够高，以盖住页面中绝对定位的元素*/
+		transition: all  .3s; 
+		/*在0.3秒钟内将属性的改变添加过渡动画*/
 	}
 	.navbar.active {
 		/* 带.active的导航条取消平移变形 */
 		transform: translateX(0);
 	}
 	.menu > li {
-		float: none;       /*PHONE下每个菜单项独占一行*/
+		float: none;	/*PHONE下每个菜单项独占一行*/
 		text-align: center;
 		border-bottom: 1px solid #666;
 	}
-	.menu-close {    /*仅在PHONE屏幕下显示的关闭按钮*/
+	.menu-close {	/*仅在PHONE屏幕下显示的关闭按钮*/
 		position: absolute;
 		top: 7px;
 		right: 10px;
@@ -180,39 +176,40 @@
 		font-size: 2em;
 	}
 }
-/* 4、轮播广告 */
+
+/* 4.轮播广告 */
 .carouselbar {
 	border-bottom: 4px solid #ddd;
 }
 .carousel {
-	position: relative;    /*绝对定位的子元素提供参照物*/
+	position: relative;  /*为绝对定位的子元素提供参照物*/
 }
 .carousel  .items  a {
-	display: block;     /*改为块级元素，可以修改宽和高*/
+	display: block;		/*改为块级元素，可以修改宽和高*/
 	width: 100%;
 	height: 380px;
-	background-position: center;    /*背景图的位置*/
-	background-repeat: no-repeat;   /*背景图仅显示一次*/
+	background-position: center;   /*背景图的位置*/
+	background-repeat: no-repeat;  /*背景图仅显示一次，不平铺*/
 }
-.carousel  .items  li:not(.active) {     /*不带.active的li隐藏*/
+.carousel  .items  li:not(.active) {  /*不带.active的li隐藏*/
 	display: none;
 }
 .carousel  .indicators {
-	position: absolute;    /*圆形指示器要在图片上方*/
+	position: absolute;		/*圆形指示器要在图片上方*/
 	bottom: 20px;
-	left: 50%;
+	left: 50%;				/*固定定位的元素水平居中*/
 	margin-left: -72px;
 }
 .carousel  .indicators  li {
 	width: 18px;
 	height: 18px;
 	background: #ccc;
-	border-radius: 50%;    /*边框圆角半径为尺寸的一半*/
+	border-radius: 50%;  /*边框圆角半径为尺寸的一半*/
 	float: left;
-	margin: 0 9px;
-	cursor: pointer;       /*光标悬停时变为“小手”*/
+	margin: 0  9px;
+	cursor: pointer;	 /*光标悬停时变为“小手”*/
 }
-.carousel  .indicators  li.active {
+.carousel  .indicators   li.active {
 	background: #ff9300;
 }
 .carousel  .controls {
@@ -220,38 +217,38 @@
 	top: 50%;
 	left: 50%;
 }
-.carousel  .controls .prev,
-.carousel  .controls .next {
+.carousel  .controls  .prev,
+.carousel  .controls  .next {
 	position: absolute;
 	width: 54px;
 	height: 94px;
 	font-size: 4em;
-	line-height: 94px;      /*文字竖直居中*/
-	text-align: center;     /*文字水平居中*/
-	/* opacity: .5;    会导致当前元素及其中的文字/图片*/
-	background: rgba(0,0,0,0.3);  /*仅背景颜色半透明*/
+	line-height: 94px;		/*文字竖直居中*/
+	text-align: center;		/*文字水平居中*/
+	/* opacity: .5;   会导致当前元素及其中的文字/图片都半透明*/
+	background: rgba(0,0,0, 0.3); /*仅背景色半透明*/
 	color: #fff;
 	margin-top: -47px;
 }
-.carousel  .controls .prev {
+.carousel  .controls  .prev {
 	margin-left: -496px;
 }
-.carousel  .controls .next {
+.carousel  .controls  .next {
 	margin-left: 442px;
 }
-.carousel  .controls .prev:hover,
-.carousel  .controls .next:hover {
-	background: rgba(0,0,0,0.6);
+.carousel  .controls  .prev:hover,
+.carousel  .controls  .next:hover {
+	background: rgba(0,0,0, 0.6);
 }
-@media  screen  and  (max-width:767px) {
-	.carousel  .items  a {
-		height: 190px;
-		/*背景图原高380px,此处的容器较小，让背景图覆盖*/
+@media screen  and (max-width: 767px) {
+	.carousel  .items   a {
+		height: 200px;
+		/* 背景图原高380px，此处的容器较小，
+		让背景图大小覆盖容器即可——宽度可能发生溢出 */
 		background-size: cover;
 	}
-	.carousel  .controls {
-		position: static;   /*取消.prev和.next父元素的绝对定位，
-		让它俩的定位参照物设定为.carousel即可*/
+	.carousel  .controls  {
+		position: static;	/*取消.prev和.next父元素的绝对定位，让它俩的定位参照物设定为.carousel即可*/
 	}
 	.carousel  .controls  .prev {
 		margin-left: 0;	/*清除全局margin-left设置*/
@@ -262,23 +259,22 @@
 		margin-left: 0; /*清除全局margin-left设置*/
 		right: 0;
 		top: 50%;
-	} 
+	}
 }
-@media  screen  and  (min-width:768px)  and  (max-width:1023px) {
+@media screen and (min-width:768px) and (max-width:1023px) {
 	.carousel  .controls  .prev {
-		margin-left: -375px;/*向左移动容器的一半*/		
+		margin-left: -375px;/*向左移动容器宽度的一半*/
 	}
 	.carousel  .controls  .next {
-		margin-left: 321px;/*向右移动容器半宽——自己的宽*/
-	} 
+		margin-left: 321px;/*向右移动容器半宽-自己的宽*/
+	}
 }
 
-
-/* 6、底部条 */
+/* 6.底部条 */
 .bottombar {
 	background: #eee;
 }
-/* 选择“底部条”中的“容器”下的第一个，row元素 */
+/* 选择“底部条”中的“容器”下的第一个.row元素 */
 .bottombar > .container > .row:first-child {
 	border-bottom: 1px solid #ddd;
 }
@@ -286,19 +282,19 @@
 	margin-bottom: 5px;
 	color: #555;
 }
-.mainbar  .fn-menu {
+.bottombar   .fn-menu {
 	color: #666;
 	line-height: 1.7em;
 }
-.bottombar  .contact {
+.bottombar   .contact {
 	margin-top: 40px;
 }
-.bottombar  .contact  .fa-fax {
+.bottombar   .contact   .fa-fax {
 	color: #00be56;
 	font-size: 4em;
 	float: left;
 }
-.bottombar  .contact  .hotline {
+.bottombar   .contact   .hotline {
 	margin-left: 4em;
 	font-size: 1.4em;
 	line-height: 1.6em;
@@ -306,13 +302,14 @@
 .bottombar  .copyright {
 	text-align: center;
 	color: #999;
-	font-size: .8em;
+	font-size:  .8em;
 	line-height: 2em;
-	margin: 1em 0  1.5em;
+	margin: 1em  0  1.5em;
 }
-/* 7、底部页签条 */
-@media  screen  and  (max-width:767px) {
-	/*让body在底部留白，高度为.tabbar的高度*/
+
+/* 7.底部的页签条 */
+@media screen and (max-width: 767px) {
+	/* 让body在底部留白，高度为在底部固定定位的.tabbar的高度 */
 	body {
 		margin-bottom: 64px;
 	}
@@ -326,9 +323,9 @@
 		border-top: 1px solid #d2cfcc;
 	}
 	.tab {
-		color: #ddd;
+		color: #ccc;
 		text-align: center;
-		padding: 7px 0 0;
+		padding: 7px  0  0;
 	}
 	.tab.active {
 		color: #00be56;
@@ -339,7 +336,8 @@
 }
 
 /* 8.面包屑 */
-.breadcrumb ul:after {  /*在ul的尾部生成一个新的子元素，清除所有的li浮动导致的ul高度丢失问题*/
+/*在ul的尾部生成一个新的子元素，清除所有的li浮动导致的ul高度丢失问题*/
+.breadcrumb  ul:after {	
 	content: '';
 	display: block;
 	clear: both;
@@ -351,7 +349,7 @@
 /* 面包屑中的每个li（除了最后一个）尾部生成一个> */
 .breadcrumb  ul  li:not(:last-child):after {
 	content: '>';
-	margin: 0 0.5em;
+	margin: 0  0.5em;
 	color: #999;
 }
 .breadcrumb  ul  li  a {
@@ -360,41 +358,42 @@
 
 /* 9.分页条 */
 .pager {
-	padding: 2.8em 0;
+	padding:  3em  0;
 }
-.pager ul {
+.pager  ul {
 	text-align: center;
 }
-.pager ul li {
+.pager  ul  li {
 	/* 让li变为行内块，既可以多个li共处一行，也可以指定尺寸/间距 */
 	display: inline-block;
-	/* 此方式不足：①老IE不支持  ②HTML中只要有空白字符，呈现时会有一个空格 */
+	/* 此方式的不足：①老IE不支持  ②HTML中只要li间有空白字符，呈现时就会有一个空格 */
 	border: 1px solid #ddd;
-	padding: 0.3em  0.7em;
-	cursor: pointer;  /*鼠标悬停在li上方时，光标变为小手*/
+	padding: 0.3em   0.7em;
+	cursor: pointer; /*鼠标悬停在li上方时，光标变为小手*/
 }
-.pager ul li.active {
+.pager  ul  li.active {
 	background: #99d989;
-	border: 1px solid #99D989;
+	border: 1px solid #99d989;
 	cursor: default;
 }
-.pager ul li.disabled {
-	background: #f4f4f4f4;
+.pager  ul  li.disabled {
+	background: #f4f4f4;
 	cursor: default;
 }
 .pager  ul  li  a {
 	color: #999;
 }
-.pager ul li.active a{
+.pager  ul  li.active  a {
 	color: #fff;
 	/* 将超链接的默认光标效果（小手）转换为平时效果 */
 	cursor: default;
 }
-.pager  ul  li.disabled a {
+.pager  ul  li.disabled  a {
 	color: #ddd;
 	cursor: default;
 }
-/* 当鼠标悬停于非.active项/非.disables项上方时，边框变色 */
-.pager  ul  li:not(.active):not(.disabled):hover{
+/* 当鼠标悬停于非.active项/非.disabled项上方时，边框变色 */
+.pager  ul  li:not(.active):not(.disabled):hover  {
 	border-color: #99d989;
-}
+} 
+

@@ -1,47 +1,68 @@
-a{
-	color: #9999b3;
+body{
+	margin: 0;
+	font-size: 12px;
+	line-height: 24px;
+	color: #555;
+	background: #fcfcfc;
 }
-a:hover,
-a:active{
-	color: #9999b3;
-}
-h3 {
-	font-weight: lighter;
+.breadcrumb{
+	line-height: 32px;
+	color: #999;
+	font-size: 14px;
+	margin-bottom: 25px;
 }
 
-.schoolbar-item {
-	padding-top: 10px;
+
+
+.address{
+	width: 800px;
+	margin: 0 auto;
+}
+.address .clear{
+	clear: both;
+}
+.address .address_detail h3{
+	display: block;
+	font-weight: normal;
+	font-size: 1.5em;
+	color: #999999;
+}
+.address .address_detail p{
+	color: #999999;
 	font-size: 1.1em;
 }
-.day1 {
-	height: 167px;
-	border-bottom: 1px solid #eee;
+.clearfloat{
+	padding: 30px 0;
+	border-bottom: 1px dotted #ccc;
+	width: 100%;
 }
-.schoolbar .address {
-	margin-top: 40px;
+.address .icon-location{
+	font-size: 5em;
+	color: #00BE56;
+	text-align: center;
+	line-height: 168px;
 }
-.schoolbar .address .fa-map-marker {
-	color: #00be56;
-	font-size: 4em;
-	float: left;
-	margin-left: 3em;
+.allmap{
+	height: 171px;
 }
-.schoolbar .address .address-item{
-	margin-left: 3em;
-	font-size: 1.4em;
-	line-height: 1.6em;
-}
-.schoolbar .address .address-detail {
-	margin-left: 5em;
-	text-align: left;
-	color: #999;
-	font-size: .8em;
-	line-height: 2em;
-}
-@media screen and (max-width:767px) {
-	.day1 {
-		height: 250px;
-		border-bottom: 1px solid #eee;
+@media screen and (max-width:768px){
+	.address .icon-location{
+		text-align: center;
+	}
+	.address .address_detail {
+		margin: 0 auto;
+	}
+	
+	.allmap{
+		width: 760px;
+		height: 171px;
+		margin: 0 auto;
+	}
+	.map{
+		width: 100%;
+	}
+	.text{
+		width: 100%;
 	}
 }
 
